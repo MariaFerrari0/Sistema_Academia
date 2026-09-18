@@ -38,6 +38,7 @@
         body {
             font-size: 1.6rem;
             font-family: var(--font-primary);
+            background: rgb(239, 211, 231);
         }
 
         h1,
@@ -74,6 +75,44 @@
 
         .main-logo-icon {
             margin-right: 2rem;
+        }
+
+        .search-form {
+            border: .2rem solid rgb(0, 0, 26);
+            max-width: 64rem;
+            margin: 0 auto;
+            border-radius: .4rem;
+            position: relative;
+            transition: all 300ms ease-in-out;
+        }
+
+        .search-input,
+        .search-buttonn {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 1rem;
+            transition: all 300ms ease-in-out;
+        }
+
+        .search-input {
+            width: 100%;
+            padding-right: 3rem;
+        }
+
+        .search-buttonn {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .search-form:focus-within {
+            border-color: deeppink;
+            background: white;
+        }
+
+        .search-form:focus-within .search-buttonn {
+            color: deeppink;
         }
     </style>
 </head>
