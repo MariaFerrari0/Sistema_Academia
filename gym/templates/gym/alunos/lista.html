@@ -1,0 +1,66 @@
+{% extends 'gym/base.html' %}
+
+{% block title %}Alunos | PowerOn{% endblock %}
+
+{% block page_title %}Alunos{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+
+    <div>
+        <h3>Alunos cadastrados</h3>
+        <p>Consulte e gerencie os alunos da academia.</p>
+    </div>
+
+    <a href="{% url 'cadastrar_aluno' %}" class="btn-primary">
+        + Novo aluno
+    </a>
+
+</div>
+
+
+<div class="table-card">
+
+    <div class="table-top">
+
+        <div class="search-box">
+            🔎
+            <input type="text" placeholder="Pesquisar aluno...">
+        </div>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td colspan="6" class="empty">
+                        Nenhum aluno cadastrado ainda.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

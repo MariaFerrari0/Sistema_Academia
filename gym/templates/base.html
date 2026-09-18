@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}PowerOn{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'gym/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+
+                <div>
+                    <h1>PowerOn</h1>
+                    <span>Academia</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+
+                <p class="menu-title">MENU</p>
+
+                <a href="{% url 'home' %}" class="menu-item">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="{% url 'lista_alunos' %}" class="menu-item">
+                    <span>👥</span>
+                    Alunos
+                </a>
+
+                <a href="{% url 'lista_professores' %}" class="menu-item">
+                    <span>🏋</span>
+                    Professores
+                </a>
+
+                <a href="{% url 'lista_modalidades' %}" class="menu-item">
+                    <span>▣</span>
+                    Modalidades
+                </a>
+
+                <a href="{% url 'lista_matriculas' %}" class="menu-item">
+                    <span>📋</span>
+                    Matrículas
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-box">
+                    <div class="user-avatar">A</div>
+
+                    <div>
+                        <strong>Administrador</strong>
+                        <small>PowerOn</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <button class="menu-button" onclick="toggleSidebar()">
+                    ☰
+                </button>
+
+                <div>
+                    <h2>{% block page_title %}Dashboard{% endblock %}</h2>
+                    <p class="page-subtitle">
+                        Gestão da Academia PowerOn
+                    </p>
+                </div>
+
+            </header>
+
+
+            <section class="content">
+
+                {% block content %}
+                {% endblock %}
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="{% static 'gym/js/script.js' %}"></script>
+
+</body>
+</html>

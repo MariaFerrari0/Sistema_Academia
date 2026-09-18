@@ -1,0 +1,117 @@
+{% extends 'gym/base.html' %}
+
+{% block title %}Dashboard | PowerOn{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="welcome">
+    <div>
+        <span class="badge">POWERON</span>
+
+        <h1>Olá, Administrador! 👋</h1>
+
+        <p>
+            Bem-vindo ao sistema de gerenciamento da academia.
+        </p>
+    </div>
+
+    <div class="welcome-icon">
+        ⚡
+    </div>
+</div>
+
+
+<!-- CARDS -->
+
+<div class="cards">
+
+    <div class="card">
+        <div class="card-icon purple">👥</div>
+
+        <div>
+            <span>Total de alunos</span>
+            <strong>0</strong>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-icon blue">🏋</div>
+
+        <div>
+            <span>Professores</span>
+            <strong>0</strong>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-icon green">▣</div>
+
+        <div>
+            <span>Modalidades</span>
+            <strong>0</strong>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-icon orange">📋</div>
+
+        <div>
+            <span>Matrículas</span>
+            <strong>0</strong>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ACESSO RÁPIDO -->
+
+<div class="section-header">
+    <div>
+        <h3>Acesso rápido</h3>
+        <p>Gerencie os principais recursos da academia.</p>
+    </div>
+</div>
+
+
+<div class="quick-grid">
+
+    <a href="{% url 'lista_alunos' %}" class="quick-card">
+        <div class="quick-icon">👥</div>
+        <h3>Alunos</h3>
+        <p>Gerenciar alunos cadastrados</p>
+        <span>→</span>
+    </a>
+
+
+    <a href="{% url 'lista_professores' %}" class="quick-card">
+        <div class="quick-icon">🏋</div>
+        <h3>Professores</h3>
+        <p>Gerenciar professores</p>
+        <span>→</span>
+    </a>
+
+
+    <a href="{% url 'lista_modalidades' %}" class="quick-card">
+        <div class="quick-icon">▣</div>
+        <h3>Modalidades</h3>
+        <p>Gerenciar modalidades</p>
+        <span>→</span>
+    </a>
+
+
+    <a href="{% url 'lista_matriculas' %}" class="quick-card">
+        <div class="quick-icon">📋</div>
+        <h3>Matrículas</h3>
+        <p>Gerenciar matrículas</p>
+        <span>→</span>
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'gym/base.html' %}
+
+{% block title %}Matrículas | PowerOn{% endblock %}
+
+{% block page_title %}Matrículas{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+
+    <div>
+        <h3>Matrículas</h3>
+        <p>Controle as matrículas dos alunos.</p>
+    </div>
+
+    <a href="{% url 'cadastrar_matricula' %}" class="btn-primary">
+        + Nova matrícula
+    </a>
+
+</div>
+
+
+<div class="table-card">
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Nº</th>
+                    <th>Aluno</th>
+                    <th>Modalidade</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td colspan="6" class="empty">
+                        Nenhuma matrícula cadastrada ainda.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

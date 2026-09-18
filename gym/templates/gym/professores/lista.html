@@ -1,0 +1,55 @@
+{% extends 'gym/base.html' %}
+
+{% block title %}Professores | PowerOn{% endblock %}
+
+{% block page_title %}Professores{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+
+    <div>
+        <h3>Professores</h3>
+        <p>Gerencie os profissionais da academia.</p>
+    </div>
+
+    <a href="{% url 'cadastrar_professor' %}" class="btn-primary">
+        + Novo professor
+    </a>
+
+</div>
+
+
+<div class="table-card">
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Registro</th>
+                    <th>Nome</th>
+                    <th>Especialidade</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td colspan="5" class="empty">
+                        Nenhum professor cadastrado ainda.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
