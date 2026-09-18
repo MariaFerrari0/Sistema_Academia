@@ -2,7 +2,7 @@ from django.urls import path
 from gym.views import home, contato, sobre
 
 
-#dominio/gym/
+#dominio/g
 urlpatterns = [
     
     path('', home),
