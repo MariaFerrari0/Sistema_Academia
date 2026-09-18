@@ -1,11 +1,10 @@
 from django.urls import path
-from gym.views import home, contato, sobre
+from gym.views import home
 
 
 #dominio/g
 urlpatterns = [
     
     path('', home),
-    path('contato/', contato),
-    path('sobre/', sobre),
+   
 ]
