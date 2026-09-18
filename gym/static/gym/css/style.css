@@ -7,7 +7,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f6fa;
-    color: #1f2937;
+    color: #a8057c;
 }
 
 a {
@@ -25,7 +25,7 @@ a {
 
 .sidebar {
     width: 250px;
-    background: #171329;
+    background: #ca016f;
     color: white;
     min-height: 100vh;
     position: fixed;
@@ -41,14 +41,14 @@ a {
     align-items: center;
     gap: 12px;
     padding: 25px 22px;
-    border-bottom: 1px solid #30294b;
+    border-bottom: 1px solid #b31481;
 }
 
 .logo-icon {
     width: 42px;
     height: 42px;
     border-radius: 12px;
-    background: #7c3aed;
+    background: #ea1ab9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +90,7 @@ a {
 }
 
 .menu-item:hover {
-    background: #282142;
+    background: #214232;
     color: white;
 }
 
@@ -107,11 +107,11 @@ a {
 }
 
 .user-box {
-    background: #282142;
-    padding: 12px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+        background: #bf0351;
+        padding: 12px;
+        border-radius: 10px;
+        display: flex;
+    align-items: center;    
     gap: 10px;
 }
 
@@ -119,7 +119,7 @@ a {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: #7c3aed;
+    background: #d40484;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +178,7 @@ a {
 /* WELCOME */
 
 .welcome {
-    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    background: linear-gradient(135deg, #ef4cc1, #cf058f);
     color: white;
     border-radius: 16px;
     padding: 30px;
@@ -308,7 +308,7 @@ a {
 
 .quick-card:hover {
     transform: translateY(-3px);
-    border-color: #8b5cf6;
+    border-color: #f65ce9;
 }
 
 .quick-icon {
@@ -336,7 +336,7 @@ a {
     position: absolute;
     right: 20px;
     bottom: 20px;
-    color: #7c3aed;
+    color: #ed3aae;
 }
 
 
@@ -344,7 +344,7 @@ a {
 
 .btn-primary {
     border: none;
-    background: #7c3aed;
+    background: #ed3ab4;
     color: white;
     padding: 11px 17px;
     border-radius: 8px;
@@ -354,7 +354,7 @@ a {
 }
 
 .btn-primary:hover {
-    background: #6d28d9;
+    background: #f358c7;
 }
 
 .btn-secondary {
@@ -443,7 +443,7 @@ td {
 }
 
 .form-header p {
-    color: #8a8f9c;
+    color: #d6a8ce;
     font-size: 13px;
     margin-top: 5px;
 }
@@ -480,7 +480,7 @@ td {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #7c3aed;
+    border-color: #ed3a9f;
 }
 
 .form-actions {
