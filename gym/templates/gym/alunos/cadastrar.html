@@ -1,11 +1,19 @@
 {% extends 'gym/base.html' %}
 
 {% block title %}
+{% if editar %}
+Editar Aluno | PowerOn
+{% else %}
 Cadastrar Aluno | PowerOn
+{% endif %}
 {% endblock %}
 
 {% block page_title %}
+{% if editar %}
+Editar Aluno
+{% else %}
 Cadastrar Aluno
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -14,24 +22,50 @@ Cadastrar Aluno
 
     <div class="page-header">
         <div>
-            <h2>Novo aluno</h2>
-            <p>Cadastre as informações do aluno.</p>
+            <h2>
+                {% if editar %}
+                Editar aluno
+                {% else %}
+                Novo aluno
+                {% endif %}
+            </h2>
+
+            <p>
+                {% if editar %}
+                Altere as informações do aluno.
+                {% else %}
+                Cadastre as informações do aluno.
+                {% endif %}
+            </p>
         </div>
     </div>
 
     <form method="post">
-    {% csrf_token %}
+        {% csrf_token %}
 
         <div class="form-grid">
 
             <div class="form-group">
                 <label for="codigo">Código</label>
-                <input type="number" id="codigo" name="codigo">
+                <input
+                    type="number"
+                    id="codigo"
+                    name="codigo"
+                    value="{{ aluno.codigo|default:'' }}"
+                    {% if editar %}readonly{% endif %}
+                    required
+                >
             </div>
 
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome">
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value="{{ aluno.nome|default:'' }}"
+                    required
+                >
             </div>
 
             <div class="form-group">
@@ -40,41 +74,53 @@ Cadastrar Aluno
                     type="date"
                     id="data_nascimento"
                     name="data_nascimento"
+                    value="{{ aluno.data_nascimento|default:'' }}"
+                    required
                 >
             </div>
 
             <div class="form-group">
-                <label for="peso">Peso</label>
+                <label for="peso">Peso (kg)</label>
                 <input
                     type="number"
                     id="peso"
                     name="peso"
+                    value="{{ aluno.peso|default:'' }}"
                     step="0.01"
-                    min="0"
+                    min="0.01"
+                    required
                 >
             </div>
 
             <div class="form-group">
-                <label for="altura">Altura</label>
+                <label for="altura">Altura (m)</label>
                 <input
                     type="number"
                     id="altura"
                     name="altura"
+                    value="{{ aluno.altura|default:'' }}"
                     step="0.01"
-                    min="0"
+                    min="0.01"
+                    required
                 >
             </div>
 
         </div>
 
         <div class="form-actions">
+
             <a href="{% url 'lista_alunos' %}" class="btn-secondary">
                 Cancelar
             </a>
 
             <button type="submit" class="btn-primary">
+                {% if editar %}
+                Salvar alterações
+                {% else %}
                 Cadastrar aluno
+                {% endif %}
             </button>
+
         </div>
 
     </form>

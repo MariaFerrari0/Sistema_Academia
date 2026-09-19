@@ -868,3 +868,36 @@ a {
         width: 15px;
     }
 }
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-actions a {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.table-actions .btn-secondary {
+    padding: 8px 12px;
+    font-size: 10px;
+}
+
+.btn-danger {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ff3b6b;
+    border-radius: 8px;
+    background: transparent;
+    color: #ff3b6b;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #ff3b6b;
+    color: white;
+}

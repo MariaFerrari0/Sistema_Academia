@@ -22,12 +22,18 @@ def lista_alunos(request):
 
 def cadastrar_aluno(request):
     if request.method == 'POST':
+        peso = float(request.POST.get('peso'))
+        altura = float(request.POST.get('altura'))
+
+        if altura > 3:
+            altura = altura / 100
+
         aluno = {
             'codigo': request.POST.get('codigo'),
             'nome': request.POST.get('nome'),
             'data_nascimento': request.POST.get('data_nascimento'),
-            'peso': request.POST.get('peso'),
-            'altura': request.POST.get('altura')
+            'peso': peso,
+            'altura': altura
         }
 
         arquivo_alunos.inserir(aluno)
@@ -35,6 +41,45 @@ def cadastrar_aluno(request):
         return redirect('lista_alunos')
 
     return render(request, 'gym/alunos/cadastrar.html')
+
+
+def editar_aluno(request, codigo):
+    aluno = arquivo_alunos.buscar(codigo)
+
+    if aluno is None:
+        return redirect('lista_alunos')
+
+    if request.method == 'POST':
+        peso = float(request.POST.get('peso'))
+        altura = float(request.POST.get('altura'))
+
+        if altura > 3:
+            altura = altura / 100
+
+        aluno_atualizado = {
+            'codigo': codigo,
+            'nome': request.POST.get('nome'),
+            'data_nascimento': request.POST.get('data_nascimento'),
+            'peso': peso,
+            'altura': altura
+        }
+
+        arquivo_alunos.atualizar(aluno_atualizado)
+
+        return redirect('lista_alunos')
+
+    return render(
+        request,
+        'gym/alunos/cadastrar.html',
+        {
+            'aluno': aluno,
+            'editar': True
+        }
+    )
+def excluir_aluno(request, codigo):
+    arquivo_alunos.excluir(codigo)
+
+    return redirect('lista_alunos')
 
 
 def lista_professores(request):
