@@ -1,7 +1,7 @@
 {% extends 'gym/base.html' %}
 
 {% block title %}
-PowerOn - Modalidades
+Modalidades | PowerOn
 {% endblock %}
 
 {% block page_title %}
@@ -10,114 +10,47 @@ Modalidades
 
 {% block content %}
 
-<div class="page-container">
+<div class="page-header">
 
-    <div class="page-header">
-
-        <div>
-            <span class="page-label">GERENCIAMENTO</span>
-            <h1>Modalidades</h1>
-            <p>Gerencie as modalidades disponíveis na academia.</p>
-        </div>
-
-        <a href="{% url 'cadastrar_modalidade' %}" class="btn-primary">
-            + Nova Modalidade
-        </a>
-
+    <div>
+        <h2>Modalidades</h2>
+        <p>Gerenciamento das modalidades da academia.</p>
     </div>
 
+    <a href="{% url 'cadastrar_modalidade' %}" class="btn-primary">
+        + Nova modalidade
+    </a>
 
-    <div class="content-card">
-
-        <div class="card-header">
-
-            <div>
-                <h3>Lista de modalidades</h3>
-                <p>Modalidades cadastradas no sistema</p>
-            </div>
-
-            <div class="search-box">
-                🔎
-                <input type="text" placeholder="Buscar modalidade...">
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="table-container">
+<div class="table-container">
 
-            <table>
+    <table>
 
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Descrição</th>
-                        <th>Professor</th>
-                        <th>Valor</th>
-                        <th>Limite</th>
-                        <th>Total</th>
-                        <th>Vagas</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Professor</th>
+                <th>Valor da aula</th>
+                <th>Limite de alunos</th>
+                <th>Total de alunos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
 
-                <tbody>
+        <tbody>
 
-                    <tr>
-                        <td>M001</td>
-                        <td>Musculação</td>
-                        <td>Lucas Fernandes</td>
-                        <td>R$ 25,00</td>
-                        <td>20</td>
-                        <td>18</td>
-                        <td>2</td>
+            <tr>
+                <td colspan="7" class="empty">
+                    Nenhuma modalidade cadastrada.
+                </td>
+            </tr>
 
-                        <td>
-                            <span class="status-badge active">
-                                Disponível
-                            </span>
-                        </td>
-                    </tr>
+        </tbody>
 
-                    <tr>
-                        <td>M002</td>
-                        <td>Pilates</td>
-                        <td>Juliana Costa</td>
-                        <td>R$ 30,00</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>0</td>
-
-                        <td>
-                            <span class="status-badge inactive">
-                                Lotada
-                            </span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>M003</td>
-                        <td>Funcional</td>
-                        <td>Rafael Souza</td>
-                        <td>R$ 35,00</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>2</td>
-
-                        <td>
-                            <span class="status-badge active">
-                                Disponível
-                            </span>
-                        </td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
+    </table>
 
 </div>
 

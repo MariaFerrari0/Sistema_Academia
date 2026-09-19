@@ -1,7 +1,7 @@
 {% extends 'gym/base.html' %}
 
 {% block title %}
-PowerOn - Professores
+Professores | PowerOn
 {% endblock %}
 
 {% block page_title %}
@@ -10,124 +10,45 @@ Professores
 
 {% block content %}
 
-<div class="page-container">
+<div class="page-header">
 
-    <div class="page-header">
-
-        <div>
-            <span class="page-label">GERENCIAMENTO</span>
-            <h1>Professores</h1>
-            <p>Cadastre e consulte os professores da academia.</p>
-        </div>
-
-        <a href="{% url 'cadastrar_professor' %}" class="btn-primary">
-            + Novo Professor
-        </a>
-
+    <div>
+        <h2>Professores</h2>
+        <p>Gerenciamento dos professores cadastrados.</p>
     </div>
 
+    <a href="{% url 'cadastrar_professor' %}" class="btn-primary">
+        + Novo professor
+    </a>
 
-    <div class="content-card">
-
-        <div class="card-header">
-
-            <div>
-                <h3>Lista de professores</h3>
-                <p>Professores cadastrados no sistema</p>
-            </div>
-
-            <div class="search-box">
-                🔎
-                <input type="text" placeholder="Buscar por nome ou código...">
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="table-container">
+<div class="table-container">
 
-            <table>
+    <table>
 
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>Especialidade</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
 
-                <tbody>
+        <tbody>
 
-                    <tr>
-                        <td>P001</td>
-                        <td>Lucas Fernandes</td>
-                        <td>(18) 99162-3456</td>
-                        <td>Musculação</td>
+            <tr>
+                <td colspan="5" class="empty">
+                    Nenhum professor cadastrado.
+                </td>
+            </tr>
 
-                        <td>
-                            <span class="status-badge active">
-                                Ativo
-                            </span>
-                        </td>
+        </tbody>
 
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>P002</td>
-                        <td>Juliana Costa</td>
-                        <td>(18) 99765-4321</td>
-                        <td>Funcional</td>
-
-                        <td>
-                            <span class="status-badge active">
-                                Ativo
-                            </span>
-                        </td>
-
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>P003</td>
-                        <td>Rafael Souza</td>
-                        <td>(18) 98877-6655</td>
-                        <td>Cross Training</td>
-
-                        <td>
-                            <span class="status-badge inactive">
-                                Inativo
-                            </span>
-                        </td>
-
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
+    </table>
 
 </div>
 

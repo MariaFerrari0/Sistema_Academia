@@ -19,7 +19,8 @@ Cadastrar Aluno
         </div>
     </div>
 
-    <form>
+    <form method="post">
+    {% csrf_token %}
 
         <div class="form-grid">
 

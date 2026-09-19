@@ -1,7 +1,7 @@
 {% extends 'gym/base.html' %}
 
 {% block title %}
-PowerOn - Matrículas
+Matrículas | PowerOn
 {% endblock %}
 
 {% block page_title %}
@@ -10,128 +10,45 @@ Matrículas
 
 {% block content %}
 
-<div class="page-container">
+<div class="page-header">
 
-    <div class="page-header">
-
-        <div>
-            <span class="page-label">GERENCIAMENTO</span>
-            <h1>Matrículas</h1>
-            <p>Gerencie as matrículas dos alunos.</p>
-        </div>
-
-        <a href="{% url 'cadastrar_matricula' %}" class="btn-primary">
-            + Nova Matrícula
-        </a>
-
+    <div>
+        <h2>Matrículas</h2>
+        <p>Gerenciamento das matrículas da academia.</p>
     </div>
 
+    <a href="{% url 'cadastrar_matricula' %}" class="btn-primary">
+        + Nova matrícula
+    </a>
 
-    <div class="content-card">
-
-        <div class="card-header">
-
-            <div>
-                <h3>Lista de matrículas</h3>
-                <p>Matrículas cadastradas no sistema</p>
-            </div>
-
-            <div class="search-box">
-                🔎
-                <input type="text" placeholder="Buscar matrícula...">
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="table-container">
+<div class="table-container">
 
-            <table>
+    <table>
 
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Aluno</th>
-                        <th>Modalidade</th>
-                        <th>Professor</th>
-                        <th>Qtd. aulas</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Aluno</th>
+                <th>Modalidade</th>
+                <th>Quantidade de aulas</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
 
-                <tbody>
+        <tbody>
 
-                    <tr>
-                        <td>MAT001</td>
-                        <td>Maria Eduarda Silva</td>
-                        <td>Musculação</td>
-                        <td>Lucas Fernandes</td>
-                        <td>12</td>
+            <tr>
+                <td colspan="5" class="empty">
+                    Nenhuma matrícula cadastrada.
+                </td>
+            </tr>
 
-                        <td>
-                            <span class="status-badge active">
-                                Ativa
-                            </span>
-                        </td>
+        </tbody>
 
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>MAT002</td>
-                        <td>João Pedro Santos</td>
-                        <td>Pilates</td>
-                        <td>Juliana Costa</td>
-                        <td>15</td>
-
-                        <td>
-                            <span class="status-badge active">
-                                Ativa
-                            </span>
-                        </td>
-
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>MAT003</td>
-                        <td>Ana Clara Lima</td>
-                        <td>Funcional</td>
-                        <td>Rafael Souza</td>
-                        <td>10</td>
-
-                        <td>
-                            <span class="status-badge inactive">
-                                Encerrada
-                            </span>
-                        </td>
-
-                        <td>
-                            <div class="table-actions">
-                                <button class="action-edit">✎</button>
-                                <button class="action-delete">🗑</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
+    </table>
 
 </div>
 
