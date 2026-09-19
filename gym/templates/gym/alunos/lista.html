@@ -1,63 +1,132 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Alunos | PowerOn{% endblock %}
 
-{% block page_title %}Alunos{% endblock %}
+{% block title %}
+PowerOn - Alunos
+{% endblock %}
+
+{% block page_title %}
+Alunos
+{% endblock %}
 
 {% block content %}
 
-<div class="section-header">
+<div class="page-container">
 
-    <div>
-        <h3>Alunos cadastrados</h3>
-        <p>Consulte e gerencie os alunos da academia.</p>
-    </div>
+    <div class="page-header">
 
-    <a href="{% url 'cadastrar_aluno' %}" class="btn-primary">
-        + Novo aluno
-    </a>
-
-</div>
-
-
-<div class="table-card">
-
-    <div class="table-top">
-
-        <div class="search-box">
-            🔎
-            <input type="text" placeholder="Pesquisar aluno...">
+        <div>
+            <span class="page-label">GERENCIAMENTO</span>
+            <h1>Alunos</h1>
+            <p>Cadastre e consulte os alunos da academia.</p>
         </div>
 
+        <a href="{% url 'cadastrar_aluno' %}" class="btn-primary">
+            + Novo Aluno
+        </a>
+
     </div>
 
 
-    <div class="table-container">
+    <div class="content-card">
 
-        <table>
+        <div class="card-header">
 
-            <thead>
-                <tr>
-                    <th>Matrícula</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+            <div>
+                <h3>Lista de alunos</h3>
+                <p>Alunos cadastrados no sistema</p>
+            </div>
 
-            <tbody>
+            <div class="search-box">
+                🔎
+                <input type="text" placeholder="Buscar por nome ou código...">
+            </div>
 
-                <tr>
-                    <td colspan="6" class="empty">
-                        Nenhum aluno cadastrado ainda.
-                    </td>
-                </tr>
+        </div>
 
-            </tbody>
 
-        </table>
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Data de nascimento</th>
+                        <th>Telefone</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>001</td>
+                        <td>Maria Eduarda Silva</td>
+                        <td>15/04/2007</td>
+                        <td>(18) 99999-9999</td>
+
+                        <td>
+                            <span class="status-badge active">
+                                Ativo
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>002</td>
+                        <td>João Pedro Santos</td>
+                        <td>22/11/2006</td>
+                        <td>(18) 98888-8888</td>
+
+                        <td>
+                            <span class="status-badge active">
+                                Ativo
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>003</td>
+                        <td>Ana Clara Lima</td>
+                        <td>10/03/2005</td>
+                        <td>(18) 97777-7777</td>
+
+                        <td>
+                            <span class="status-badge inactive">
+                                Inativo
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 

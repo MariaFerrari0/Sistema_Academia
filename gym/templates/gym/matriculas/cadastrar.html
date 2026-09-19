@@ -1,16 +1,22 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Nova matrícula | PowerOn{% endblock %}
+{% block title %}
+Cadastrar Matrícula | PowerOn
+{% endblock %}
 
-{% block page_title %}Nova matrícula{% endblock %}
+{% block page_title %}
+Cadastrar Matrícula
+{% endblock %}
 
 {% block content %}
 
-<div class="form-card">
+<div class="form-container">
 
-    <div class="form-header">
-        <h3>Dados da matrícula</h3>
-        <p>Vincule um aluno a uma modalidade.</p>
+    <div class="page-header">
+        <div>
+            <h2>Nova matrícula</h2>
+            <p>Registre uma nova matrícula.</p>
+        </div>
     </div>
 
     <form>
@@ -18,36 +24,52 @@
         <div class="form-grid">
 
             <div class="form-group">
-                <label>Aluno</label>
+                <label for="codigo_matr">
+                    Código da matrícula
+                </label>
 
-                <select>
-                    <option>Selecione um aluno</option>
-                </select>
-
+                <input
+                    type="number"
+                    id="codigo_matr"
+                    name="codigo_matr"
+                >
             </div>
 
             <div class="form-group">
-                <label>Modalidade</label>
+                <label for="cod_aluno">
+                    Código do aluno
+                </label>
 
-                <select>
-                    <option>Selecione uma modalidade</option>
-                </select>
-
+                <input
+                    type="number"
+                    id="cod_aluno"
+                    name="cod_aluno"
+                >
             </div>
 
             <div class="form-group">
-                <label>Data da matrícula</label>
-                <input type="date">
+                <label for="cod_modalidade">
+                    Código da modalidade
+                </label>
+
+                <input
+                    type="number"
+                    id="cod_modalidade"
+                    name="cod_modalidade"
+                >
             </div>
 
             <div class="form-group">
-                <label>Status</label>
+                <label for="qtde_aulas">
+                    Quantidade de aulas
+                </label>
 
-                <select>
-                    <option>Ativa</option>
-                    <option>Inativa</option>
-                </select>
-
+                <input
+                    type="number"
+                    id="qtde_aulas"
+                    name="qtde_aulas"
+                    min="1"
+                >
             </div>
 
         </div>
@@ -58,7 +80,7 @@
                 Cancelar
             </a>
 
-            <button class="btn-primary">
+            <button type="submit" class="btn-primary">
                 Cadastrar matrícula
             </button>
 

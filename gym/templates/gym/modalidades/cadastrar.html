@@ -1,16 +1,22 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Nova modalidade | PowerOn{% endblock %}
+{% block title %}
+Cadastrar Modalidade | PowerOn
+{% endblock %}
 
-{% block page_title %}Cadastrar modalidade{% endblock %}
+{% block page_title %}
+Cadastrar Modalidade
+{% endblock %}
 
 {% block content %}
 
-<div class="form-card">
+<div class="form-container">
 
-    <div class="form-header">
-        <h3>Dados da modalidade</h3>
-        <p>Cadastre uma nova atividade.</p>
+    <div class="page-header">
+        <div>
+            <h2>Nova modalidade</h2>
+            <p>Cadastre uma nova modalidade da academia.</p>
+        </div>
     </div>
 
     <form>
@@ -18,27 +24,66 @@
         <div class="form-grid">
 
             <div class="form-group">
-                <label>Nome da modalidade</label>
-                <input type="text" placeholder="Ex.: Musculação">
+                <label for="codigo_modalidade">
+                    Código da modalidade
+                </label>
+
+                <input
+                    type="number"
+                    id="codigo_modalidade"
+                    name="codigo_modalidade"
+                >
             </div>
 
             <div class="form-group">
-                <label>Professor</label>
+                <label for="descricao">
+                    Descrição
+                </label>
 
-                <select>
-                    <option>Selecione um professor</option>
-                </select>
-
+                <input
+                    type="text"
+                    id="descricao"
+                    name="descricao"
+                >
             </div>
 
             <div class="form-group">
-                <label>Quantidade de vagas</label>
-                <input type="number" placeholder="Ex.: 20">
+                <label for="cod_prof">
+                    Código do professor
+                </label>
+
+                <input
+                    type="number"
+                    id="cod_prof"
+                    name="cod_prof"
+                >
             </div>
 
             <div class="form-group">
-                <label>Horário</label>
-                <input type="time">
+                <label for="valor_aula">
+                    Valor da aula
+                </label>
+
+                <input
+                    type="number"
+                    id="valor_aula"
+                    name="valor_aula"
+                    step="0.01"
+                    min="0"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="limite_alunos">
+                    Limite de alunos
+                </label>
+
+                <input
+                    type="number"
+                    id="limite_alunos"
+                    name="limite_alunos"
+                    min="1"
+                >
             </div>
 
         </div>
@@ -49,7 +94,7 @@
                 Cancelar
             </a>
 
-            <button class="btn-primary">
+            <button type="submit" class="btn-primary">
                 Cadastrar modalidade
             </button>
 

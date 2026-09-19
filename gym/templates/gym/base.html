@@ -1,35 +1,49 @@
 {% load static %}
 
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}PowerOn{% endblock %}</title>
+    <title>
+        {% block title %}PowerOn{% endblock %}
+    </title>
 
     <link rel="stylesheet" href="{% static 'gym/css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+
 </head>
 
 <body>
 
     <div class="layout">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar active" id="sidebar">
+
+            <button class="menu-button" onclick="toggleSidebar()">
+                ☰
+            </button>
 
             <div class="logo">
-                <div class="logo-icon">⚡</div>
 
                 <div>
                     <h1>PowerOn</h1>
                     <span>Academia</span>
                 </div>
+
             </div>
 
             <nav class="menu">
 
-                <p class="menu-title">MENU</p>
+                <p class="menu-title">
+                    MENU
+                </p>
 
                 <a href="{% url 'home' %}" class="menu-item">
                     <span>⌂</span>
@@ -61,37 +75,54 @@
             <div class="sidebar-bottom">
 
                 <div class="user-box">
-                    <div class="user-avatar">A</div>
+
+                    <div class="user-avatar">
+                        A
+                    </div>
 
                     <div>
-                        <strong>Administrador</strong>
-                        <small>PowerOn</small>
+
+                        <strong>
+                            Administrador
+                        </strong>
+
+                        <small>
+                            PowerOn
+                        </small>
+
                     </div>
+
                 </div>
 
             </div>
 
         </aside>
 
-
-        <!-- CONTEÚDO -->
         <main class="main">
 
             <header class="topbar">
 
-                <button class="menu-button" onclick="toggleSidebar()">
+                <button class="menu-button menu-button-closed" onclick="toggleSidebar()">
                     ☰
                 </button>
 
                 <div>
-                    <h2>{% block page_title %}Home{% endblock %}</h2>
+
+                    <h2>
+
+                        {% block page_title %}
+                        Home
+                        {% endblock %}
+
+                    </h2>
+
                     <p class="page-subtitle">
                         Gestão da Academia PowerOn
                     </p>
+
                 </div>
 
             </header>
-
 
             <section class="content">
 
@@ -107,4 +138,5 @@
     <script src="{% static 'gym/js/script.js' %}"></script>
 
 </body>
+
 </html>

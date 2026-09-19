@@ -1,16 +1,22 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Novo professor | PowerOn{% endblock %}
+{% block title %}
+Cadastrar Professor | PowerOn
+{% endblock %}
 
-{% block page_title %}Cadastrar professor{% endblock %}
+{% block page_title %}
+Cadastrar Professor
+{% endblock %}
 
 {% block content %}
 
-<div class="form-card">
+<div class="form-container">
 
-    <div class="form-header">
-        <h3>Dados do professor</h3>
-        <p>Cadastre um novo profissional.</p>
+    <div class="page-header">
+        <div>
+            <h2>Novo professor</h2>
+            <p>Cadastre as informações do professor.</p>
+        </div>
     </div>
 
     <form>
@@ -18,23 +24,39 @@
         <div class="form-grid">
 
             <div class="form-group">
-                <label>Nome completo</label>
-                <input type="text" placeholder="Digite o nome">
+                <label for="codigo_prof">Código do professor</label>
+                <input
+                    type="number"
+                    id="codigo_prof"
+                    name="codigo_prof"
+                >
             </div>
 
             <div class="form-group">
-                <label>Registro profissional</label>
-                <input type="text" placeholder="CREF">
+                <label for="nome">Nome</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                >
             </div>
 
             <div class="form-group">
-                <label>Especialidade</label>
-                <input type="text" placeholder="Ex.: Musculação">
+                <label for="endereco">Endereço</label>
+                <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                >
             </div>
 
             <div class="form-group">
-                <label>Telefone</label>
-                <input type="text" placeholder="(00) 00000-0000">
+                <label for="telefone">Telefone</label>
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                >
             </div>
 
         </div>
@@ -45,7 +67,7 @@
                 Cancelar
             </a>
 
-            <button class="btn-primary">
+            <button type="submit" class="btn-primary">
                 Cadastrar professor
             </button>
 

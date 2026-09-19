@@ -1,53 +1,135 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Matrículas | PowerOn{% endblock %}
+{% block title %}
+PowerOn - Matrículas
+{% endblock %}
 
-{% block page_title %}Matrículas{% endblock %}
+{% block page_title %}
+Matrículas
+{% endblock %}
 
 {% block content %}
 
-<div class="section-header">
+<div class="page-container">
 
-    <div>
-        <h3>Matrículas</h3>
-        <p>Controle as matrículas dos alunos.</p>
+    <div class="page-header">
+
+        <div>
+            <span class="page-label">GERENCIAMENTO</span>
+            <h1>Matrículas</h1>
+            <p>Gerencie as matrículas dos alunos.</p>
+        </div>
+
+        <a href="{% url 'cadastrar_matricula' %}" class="btn-primary">
+            + Nova Matrícula
+        </a>
+
     </div>
 
-    <a href="{% url 'cadastrar_matricula' %}" class="btn-primary">
-        + Nova matrícula
-    </a>
 
-</div>
+    <div class="content-card">
+
+        <div class="card-header">
+
+            <div>
+                <h3>Lista de matrículas</h3>
+                <p>Matrículas cadastradas no sistema</p>
+            </div>
+
+            <div class="search-box">
+                🔎
+                <input type="text" placeholder="Buscar matrícula...">
+            </div>
+
+        </div>
 
 
-<div class="table-card">
+        <div class="table-container">
 
-    <div class="table-container">
+            <table>
 
-        <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Aluno</th>
+                        <th>Modalidade</th>
+                        <th>Professor</th>
+                        <th>Qtd. aulas</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-            <thead>
-                <tr>
-                    <th>Nº</th>
-                    <th>Aluno</th>
-                    <th>Modalidade</th>
-                    <th>Data</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+                <tbody>
 
-            <tbody>
+                    <tr>
+                        <td>MAT001</td>
+                        <td>Maria Eduarda Silva</td>
+                        <td>Musculação</td>
+                        <td>Lucas Fernandes</td>
+                        <td>12</td>
 
-                <tr>
-                    <td colspan="6" class="empty">
-                        Nenhuma matrícula cadastrada ainda.
-                    </td>
-                </tr>
+                        <td>
+                            <span class="status-badge active">
+                                Ativa
+                            </span>
+                        </td>
 
-            </tbody>
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
 
-        </table>
+                    <tr>
+                        <td>MAT002</td>
+                        <td>João Pedro Santos</td>
+                        <td>Pilates</td>
+                        <td>Juliana Costa</td>
+                        <td>15</td>
+
+                        <td>
+                            <span class="status-badge active">
+                                Ativa
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>MAT003</td>
+                        <td>Ana Clara Lima</td>
+                        <td>Funcional</td>
+                        <td>Rafael Souza</td>
+                        <td>10</td>
+
+                        <td>
+                            <span class="status-badge inactive">
+                                Encerrada
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-edit">✎</button>
+                                <button class="action-delete">🗑</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 

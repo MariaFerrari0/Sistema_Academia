@@ -1,116 +1,307 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Home | PowerOn{% endblock %}
+{% block title %}
+PowerOn
+{% endblock %}
 
-{% block page_title %}HOME{% endblock %}
+{% block page_title %}
+Home
+{% endblock %}
 
 {% block content %}
 
-<div class="welcome">
-    <div>
-        <span class="badge">POWERON</span>
+<div class="dashboard">
 
-        <h1>Olá, Administrador! 👋</h1>
-
-        <p>
-            Bem-vindo ao sistema de gerenciamento da academia.
-        </p>
-    </div>
-
-    <div class="welcome-icon">
-        ⚡
-    </div>
-</div>
-
-
-<!-- CARDS -->
-
-<div class="cards">
-
-    <div class="card">
-        <div class="card-icon purple">👥</div>
+    <div class="dashboard-welcome">
 
         <div>
-            <span>Total de alunos</span>
-            <strong>0</strong>
+            <span class="dashboard-label">
+                PAINEL ADMINISTRATIVO
+            </span>
+
+            <h1>
+                Bem-vinda, Maria Luiza!
+            </h1>
+
+            <p>
+                Aqui está um resumo do seu sistema.
+            </p>
         </div>
-    </div>
 
-
-    <div class="card">
-        <div class="card-icon blue">🏋</div>
-
-        <div>
-            <span>Professores</span>
-            <strong>0</strong>
+        <div class="dashboard-welcome-icon">
+            🏋️
         </div>
+
     </div>
 
 
-    <div class="card">
-        <div class="card-icon green">▣</div>
+    <div class="dashboard-cards">
 
-        <div>
-            <span>Modalidades</span>
-            <strong>0</strong>
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon purple">
+                👥
+            </div>
+
+            <div>
+                <span>Alunos</span>
+                <strong>48</strong>
+                <small>+3 este mês</small>
+            </div>
+
         </div>
-    </div>
 
 
-    <div class="card">
-        <div class="card-icon orange">📋</div>
+        <div class="dashboard-card">
 
-        <div>
-            <span>Matrículas</span>
-            <strong>0</strong>
+            <div class="dashboard-card-icon pink">
+                🏋️
+            </div>
+
+            <div>
+                <span>Professores</span>
+                <strong>6</strong>
+                <small>+0 este mês</small>
+            </div>
+
         </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon blue">
+                ◉
+            </div>
+
+            <div>
+                <span>Modalidades</span>
+                <strong>5</strong>
+                <small>+1 este mês</small>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon orange">
+                📋
+            </div>
+
+            <div>
+                <span>Matrículas</span>
+                <strong>42</strong>
+                <small>+4 este mês</small>
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h3>Resumo do sistema</h3>
+                    <p>Visão geral da academia</p>
+                </div>
+
+            </div>
 
 
-<!-- ACESSO RÁPIDO -->
+            <div class="system-summary">
 
-<div class="section-header">
-    <div>
-        <h3>Acesso rápido</h3>
-        <p>Gerencie os principais recursos da academia.</p>
+                <div class="summary-item">
+                    <span>Alunos ativos</span>
+                    <strong>48</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>Professores</span>
+                    <strong>6</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>Modalidades</span>
+                    <strong>5</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>Matrículas</span>
+                    <strong>42</strong>
+                </div>
+
+            </div>
+
+
+            <div class="activity-chart">
+
+                <div class="chart-line line-1"></div>
+                <div class="chart-line line-2"></div>
+                <div class="chart-line line-3"></div>
+                <div class="chart-line line-4"></div>
+
+                <div class="chart-bars">
+
+                    <div class="chart-column">
+                        <div class="bar bar-1"></div>
+                        <span>Jan</span>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="bar bar-2"></div>
+                        <span>Fev</span>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="bar bar-3"></div>
+                        <span>Mar</span>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="bar bar-4"></div>
+                        <span>Abr</span>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="bar bar-5"></div>
+                        <span>Mai</span>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="bar bar-6"></div>
+                        <span>Jun</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h3>Ações rápidas</h3>
+                    <p>Principais operações</p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <a href="{% url 'cadastrar_aluno' %}" class="quick-action">
+
+                    <div class="action-icon green">
+                        👤
+                    </div>
+
+                    <div>
+                        <strong>Cadastrar Aluno</strong>
+                        <span>Novo aluno</span>
+                    </div>
+
+                    <b>›</b>
+
+                </a>
+
+
+                <a href="{% url 'cadastrar_professor' %}" class="quick-action">
+
+                    <div class="action-icon blue">
+                        🏋️
+                    </div>
+
+                    <div>
+                        <strong>Cadastrar Professor</strong>
+                        <span>Novo professor</span>
+                    </div>
+
+                    <b>›</b>
+
+                </a>
+
+
+                <a href="{% url 'cadastrar_modalidade' %}" class="quick-action">
+
+                    <div class="action-icon purple">
+                        ◉
+                    </div>
+
+                    <div>
+                        <strong>Nova Modalidade</strong>
+                        <span>Criar modalidade</span>
+                    </div>
+
+                    <b>›</b>
+
+                </a>
+
+
+                <a href="{% url 'cadastrar_matricula' %}" class="quick-action">
+
+                    <div class="action-icon orange">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Nova Matrícula</strong>
+                        <span>Registrar matrícula</span>
+                    </div>
+
+                    <b>›</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-</div>
 
 
-<div class="quick-grid">
+    <div class="dashboard-bottom">
 
-    <a href="{% url 'lista_alunos' %}" class="quick-card">
-        <div class="quick-icon">👥</div>
-        <h3>Alunos</h3>
-        <p>Gerenciar alunos cadastrados</p>
-        <span>→</span>
-    </a>
+        <div class="dashboard-mini-card">
 
+            <div class="mini-icon">
+                ✓
+            </div>
 
-    <a href="{% url 'lista_professores' %}" class="quick-card">
-        <div class="quick-icon">🏋</div>
-        <h3>Professores</h3>
-        <p>Gerenciar professores</p>
-        <span>→</span>
-    </a>
+            <div>
+                <span>Status do sistema</span>
+                <strong>Sistema funcionando normalmente</strong>
+            </div>
 
+            <div class="status-active">
+                Ativo
+            </div>
 
-    <a href="{% url 'lista_modalidades' %}" class="quick-card">
-        <div class="quick-icon">▣</div>
-        <h3>Modalidades</h3>
-        <p>Gerenciar modalidades</p>
-        <span>→</span>
-    </a>
+        </div>
 
 
-    <a href="{% url 'lista_matriculas' %}" class="quick-card">
-        <div class="quick-icon">📋</div>
-        <h3>Matrículas</h3>
-        <p>Gerenciar matrículas</p>
-        <span>→</span>
-    </a>
+        <div class="dashboard-mini-card">
+
+            <div class="mini-icon purple">
+                💡
+            </div>
+
+            <div>
+                <span>Dica</span>
+                <strong>Mantenha os cadastros sempre atualizados.</strong>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 

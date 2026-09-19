@@ -1,52 +1,121 @@
 {% extends 'gym/base.html' %}
 
-{% block title %}Modalidades | PowerOn{% endblock %}
+{% block title %}
+PowerOn - Modalidades
+{% endblock %}
 
-{% block page_title %}Modalidades{% endblock %}
+{% block page_title %}
+Modalidades
+{% endblock %}
 
 {% block content %}
 
-<div class="section-header">
+<div class="page-container">
 
-    <div>
-        <h3>Modalidades</h3>
-        <p>Gerencie as atividades oferecidas pela academia.</p>
+    <div class="page-header">
+
+        <div>
+            <span class="page-label">GERENCIAMENTO</span>
+            <h1>Modalidades</h1>
+            <p>Gerencie as modalidades disponíveis na academia.</p>
+        </div>
+
+        <a href="{% url 'cadastrar_modalidade' %}" class="btn-primary">
+            + Nova Modalidade
+        </a>
+
     </div>
 
-    <a href="{% url 'cadastrar_modalidade' %}" class="btn-primary">
-        + Nova modalidade
-    </a>
 
-</div>
+    <div class="content-card">
+
+        <div class="card-header">
+
+            <div>
+                <h3>Lista de modalidades</h3>
+                <p>Modalidades cadastradas no sistema</p>
+            </div>
+
+            <div class="search-box">
+                🔎
+                <input type="text" placeholder="Buscar modalidade...">
+            </div>
+
+        </div>
 
 
-<div class="table-card">
+        <div class="table-container">
 
-    <div class="table-container">
+            <table>
 
-        <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Professor</th>
+                        <th>Valor</th>
+                        <th>Limite</th>
+                        <th>Total</th>
+                        <th>Vagas</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
 
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Modalidade</th>
-                    <th>Professor</th>
-                    <th>Vagas</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+                <tbody>
 
-            <tbody>
+                    <tr>
+                        <td>M001</td>
+                        <td>Musculação</td>
+                        <td>Lucas Fernandes</td>
+                        <td>R$ 25,00</td>
+                        <td>20</td>
+                        <td>18</td>
+                        <td>2</td>
 
-                <tr>
-                    <td colspan="5" class="empty">
-                        Nenhuma modalidade cadastrada ainda.
-                    </td>
-                </tr>
+                        <td>
+                            <span class="status-badge active">
+                                Disponível
+                            </span>
+                        </td>
+                    </tr>
 
-            </tbody>
+                    <tr>
+                        <td>M002</td>
+                        <td>Pilates</td>
+                        <td>Juliana Costa</td>
+                        <td>R$ 30,00</td>
+                        <td>15</td>
+                        <td>15</td>
+                        <td>0</td>
 
-        </table>
+                        <td>
+                            <span class="status-badge inactive">
+                                Lotada
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>M003</td>
+                        <td>Funcional</td>
+                        <td>Rafael Souza</td>
+                        <td>R$ 35,00</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>2</td>
+
+                        <td>
+                            <span class="status-badge active">
+                                Disponível
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 
