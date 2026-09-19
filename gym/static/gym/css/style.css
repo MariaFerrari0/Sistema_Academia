@@ -61,7 +61,7 @@ a {
 
 .logo span {
     font-size: 12px;
-    color: #aaa4c0;
+    color: #f595d8;
 }
 
 
@@ -73,7 +73,7 @@ a {
 
 .menu-title {
     font-size: 11px;
-    color: #85809a;
+    color: #e796c4;
     margin: 0 10px 10px;
     font-weight: bold;
 }
@@ -84,13 +84,13 @@ a {
     gap: 12px;
     padding: 13px 14px;
     border-radius: 9px;
-    color: #bbb6cc;
+    color: #e4a1d6;
     margin-bottom: 5px;
     transition: 0.2s;
 }
 
 .menu-item:hover {
-    background: #214232;
+    background: #e990d9;
     color: white;
 }
 
@@ -132,7 +132,7 @@ a {
 }
 
 .user-box small {
-    color: #aaa4c0;
+    color: #e68bd4;
 }
 
 
@@ -146,7 +146,7 @@ a {
 .topbar {
     height: 85px;
     background: white;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #f09ace;
     display: flex;
     align-items: center;
     padding: 0 35px;
@@ -258,7 +258,7 @@ a {
 
 .card span {
     display: block;
-    color: #8a8f9c;
+    color: #ee30d5;
     font-size: 12px;
 }
 
@@ -327,7 +327,7 @@ a {
 }
 
 .quick-card p {
-    color: #8a8f9c;
+    color: #e88ed3;
     font-size: 12px;
     margin-top: 5px;
 }
@@ -359,7 +359,7 @@ a {
 
 .btn-secondary {
     background: #f1f1f5;
-    color: #555;
+    color: #fb9de4;
     padding: 11px 17px;
     border-radius: 8px;
     font-weight: bold;
@@ -385,7 +385,7 @@ a {
     border-radius: 8px;
     padding: 9px 12px;
     width: 300px;
-    color: #999;
+    color: #e07fd2;
 }
 
 .search-box input {
@@ -405,7 +405,7 @@ table {
 
 th {
     background: #fafafa;
-    color: #777;
+    color: #eba8d5;
     font-size: 12px;
     text-align: left;
     padding: 14px 18px;
@@ -419,7 +419,7 @@ td {
 
 .empty {
     text-align: center;
-    color: #999;
+    color: #e78eca;
     padding: 45px;
 }
 
