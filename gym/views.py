@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from .persistencia.arquivo_alunos import ArquivoAlunos
+
+
+arquivo_alunos = ArquivoAlunos()
 
 
 def home(request):
@@ -6,10 +11,29 @@ def home(request):
 
 
 def lista_alunos(request):
-    return render(request, 'gym/alunos/lista.html')
+    alunos = arquivo_alunos.listar()
+
+    return render(
+        request,
+        'gym/alunos/lista.html',
+        {'alunos': alunos}
+    )
 
 
 def cadastrar_aluno(request):
+    if request.method == 'POST':
+        aluno = {
+            'codigo': request.POST.get('codigo'),
+            'nome': request.POST.get('nome'),
+            'data_nascimento': request.POST.get('data_nascimento'),
+            'peso': request.POST.get('peso'),
+            'altura': request.POST.get('altura')
+        }
+
+        arquivo_alunos.inserir(aluno)
+
+        return redirect('lista_alunos')
+
     return render(request, 'gym/alunos/cadastrar.html')
 
 
